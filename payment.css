@@ -1,0 +1,13 @@
+.srnoanddate{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+}
+.paymentsr{
+    width: 50%;
+    text-align: left;
+}
+.paymentdate{
+    width: 50%;
+    text-align: right;
+}

@@ -13,6 +13,7 @@ header{
     width: 100%;
     background-color: rgb(176, 166, 166);
     border: black 3px ridge;
+    font-size: 1rem;
 }
 main{
     border: black 3px ridge;
@@ -46,5 +47,10 @@ main{
 a{
     text-decoration: none;
     color: white;
+}
+@media (width = 390px) {
+    html{
+        font-size: 10px;
+    }
 }
 

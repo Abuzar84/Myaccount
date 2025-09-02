@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account</title>
+    <link rel="stylesheet" href="payment.css">
     <link rel="stylesheet" href="basic.css">
 </head>
 <body>
@@ -18,9 +19,42 @@
             <form>
                 <div class="srnoanddate">
                     <div class="paymentsr" id="paymentsr">
-                        <p>Payment:- <span id="srpay">1</span></p>
+                        <p>&ensp;Payment:- <span id="srpay">1</span></p>
+                    </div>
+                    <div class="paymentdate" id="paymentdate">
+                        <label for="paymentdateinput">Date:-</label>
+                        <input type="date" name="date" id="paymentdateinput">&ensp;
                     </div>
                 </div>
+                <div class="paymentinputs" id="paymentinputs">
+                    <table>
+                        <tr>
+                            <th>Particular</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="paymentdr">Dr</label>
+                                <input type="text" name="payment" id="paymentdr">
+                            </td>
+                            <td>
+                                <input type="number" name="paymentdebit" id="paymentdebit">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="paymentcr">Cr</label>
+                                <input type="text" name="paymentcr" id="paymentcr">
+                            </td>
+                            <td></td>
+                            <td>
+                                <input type="number" id="paymentcrebit">
+                            </td>
+                        </tr>
+                    </table>                
+                </div>            
             </form>
         </div>
     </main>
