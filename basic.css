@@ -1,0 +1,50 @@
+*{  
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;  
+}
+header{
+    width: 100%;
+    background-color: rgb(176, 166, 166);
+    border: black 3px ridge;
+}
+main{
+    border: black 3px ridge;
+    width: 100%;
+    display: flex;
+    background-color: rgb(86, 82, 82);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+}
+.buttons{
+    background-color: grey;
+    max-width: 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.accountingButtons{
+    background-color:#6b5353;
+    color: rgb(255, 255, 255);
+    width: 100px;
+    border: black 3px ridge;
+    font-size:1rem;
+    margin: 0.25rem;
+    padding:0.25rem;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
