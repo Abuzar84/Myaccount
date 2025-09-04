@@ -24,3 +24,13 @@ table input[type = "text"]{
 table input[type = "number"]{
     width: 50%;
 }
+.narrationandbuttons {
+    position: absolute;
+    bottom: 0;
+}
+
+input[type="button"]{
+    width: 4rem;
+    height: 2rem;
+    font-size: 1rem;
+}

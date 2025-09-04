@@ -16,6 +16,7 @@ header{
     font-size: 1rem;
 }
 main{
+    position: relative;
     border: black 3px ridge;
     width: 100%;
     display: flex;
@@ -54,3 +55,17 @@ a{
     }
 }
 
+footer{
+    width: 100%;
+    background-color: black;
+    border: black 3px ridge;
+}
+.links{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.copy{
+    border-top: rgb(202, 198, 198) 1px solid;
+}
