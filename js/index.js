@@ -2,4 +2,4 @@
 const content = document.createElement('div');
 content.className = "content"
 container.appendChild(content);
-content.innerHTML = `12,000/-`;
+content.innerHTML = localStorage.getItem(JSON.stringify(1));

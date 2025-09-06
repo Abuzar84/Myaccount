@@ -1,72 +1,30 @@
-// Get DOM elements
-const Payment_serial_no = document.getElementById('srpay');
-const paymentDate = document.getElementById('paymentdateinput');
-const paymentDr = document.getElementById('paymentdr');
-const PaymentDebite = document.getElementById('paymentdebit');
-const PaymentCr = document.getElementById('paymentcr');
-const PaymentCredit = document.getElementById('paymentcredit');
-const NarrationPayment = document.getElementById('narrationpayment');
-const PaymentReset = document.getElementById('resetPayment');
-const PaymentSave = document.getElementById('savePayment');
+const savePay = document.getElementById('savePayment');
+const resetPay = document.getElementById('resetPayment');
+const serialNumber = document.getElementById('srpay');//serial number for payment 
+let srforstore = 0; // serial number for storing in local storage.
 
-// Function to save payment data to localStorage
-PaymentSave.addEventListener('click', () => {
-    // Get current values from input fields
-    const paymentSr = Payment_serial_no.innerHTML.trim();
-    const paymentDates = paymentDate.value.trim();
-    const paymentDebit = PaymentDebite.value.trim();
-    const paymentCredit = PaymentCredit.value.trim();
-    const narration = NarrationPayment.value.trim();
+savePay.addEventListener('click',()=>{
+    const datePay = document.getElementById('paymentdateinput').value;
+    const payDrName = document.getElementById('paymentdr').value;
+    const payDrAmount = document.getElementById('paymentdebit').value;
+    const payCrName = document.getElementById('paymentcr').value;
+    const payCrAmount = document.getElementById('paymentcredit').value;
+    const payNarration = document.getElementById('narrationpayment').value;
 
-    // Basic validation
-    if (!paymentDates || !paymentDebit || !paymentCredit || !narration) {
-        alert('Please fill in all required fields.');
-        return;
-    }
+    serialNumber.innerHTML = parseInt(serialNumber.innerHTML) + 1; 
+    srforstore = srforstore+1;  
 
-    // Create payment object
-    const payment = {
-        paymentSr,
-        paymentDates,
-        paymentDebit,
-        paymentCredit,
-        narration
+    const pay = {
+        srforstore,
+        datePay,
+        payDrName,
+        payDrAmount,
+        payCrName,
+        payCrAmount,
+        payNarration
     };
+    console.log(pay);
+    localStorage.setItem(JSON.stringify(srforstore),JSON.stringify(pay));
+    alert('Payment Saved');
 
-    // Retrieve existing payments from localStorage or initialize an empty array
-    let payments = JSON.parse(localStorage.getItem('paymentStore')) || [];
-
-    // Add new payment to the array
-    payments.push(payment);
-
-    // Save updated array back to localStorage
-    localStorage.setItem('paymentStore', JSON.stringify(payments));
-
-    console.log('Payment saved:', payment);
-    alert('Payment data saved successfully!');
-
-    // Optionally reset the form after saving
-    resetForm();
-});
-
-// Function to reset the form
-function resetForm() {
-    paymentDate.value = '';
-    PaymentDebite.value = '';
-    PaymentCredit.value = '';
-    NarrationPayment.value = '';
-    // Note: Payment_serial_no is innerHTML, so it may not need resetting unless it's an input
-}
-
-// Add event listener for reset button
-PaymentReset.addEventListener('click', () => {
-    resetForm();
-    console.log('Form reset');
-});
-
-// Optional: Load and display existing payments on page load
-window.addEventListener('load', () => {
-    const payments = JSON.parse(localStorage.getItem('paymentStore')) || [];
-    console.log('Existing payments:', payments);
-    // You can add code here to display payments in the UI if needed
 });

@@ -28,7 +28,8 @@ table input[type = "number"]{
     position: absolute;
     bottom: 0;
 }
-input[type="button"]{
+input[type="button"],
+input[type="reset"]{
     width: 4rem;
     height: 2rem;
     font-size: 1rem;
